@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor, not directly.
+config_version=5
+
+[application]
+config/name="Temple Sprint"
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.2")
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[input]
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode":65), Object(InputEventKey, "physical_keycode":16777231)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode":68), Object(InputEventKey, "physical_keycode":16777233)]
+}
+restart={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode":82), Object(InputEventKey, "physical_keycode":16777221)]
+}
+
+[rendering]
+textures/default_texture_filter=0

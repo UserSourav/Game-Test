@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id=1]
+[ext_resource type="Script" path="res://scripts/Player.gd" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+size = Vector2(18, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource(1)
+
+[node name="BackgroundA" type="ColorRect" parent="."]
+color = Color(0.12, 0.2, 0.14)
+size = Vector2(1280, 720)
+position = Vector2(0, 0)
+
+[node name="BackgroundB" type="ColorRect" parent="."]
+color = Color(0.1, 0.18, 0.12)
+size = Vector2(1280, 720)
+position = Vector2(0, -720)
+
+[node name="TempleGate" type="ColorRect" parent="."]
+color = Color(0.45, 0.34, 0.22)
+size = Vector2(420, 180)
+position = Vector2(430, 120)
+
+[node name="GroundA" type="ColorRect" parent="."]
+color = Color(0.3, 0.2, 0.12)
+size = Vector2(1280, 220)
+position = Vector2(0, 500)
+
+[node name="GroundB" type="ColorRect" parent="."]
+color = Color(0.28, 0.18, 0.1)
+size = Vector2(1280, 220)
+position = Vector2(0, 280)
+
+[node name="Player" type="Area2D" parent="."]
+script = ExtResource(2)
+collision_layer = 1
+collision_mask = 6
+
+[node name="Sprite" type="ColorRect" parent="Player"]
+color = Color(0.98, 0.78, 0.47)
+size = Vector2(28, 36)
+position = Vector2(-14, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource(1)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = false
+autostart = true
+
+[node name="CoinTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = false
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+text = "Score: 0"
+position = Vector2(24, 20)
+
+[node name="GameOverLabel" type="Label" parent="HUD"]
+text = "Game Over! Press R to retry"
+position = Vector2(380, 320)
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
